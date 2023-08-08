@@ -1,0 +1,12 @@
+2023-08-07 16:35:05 0 [ERROR] mysqld: File '/var/lib/mysql/aria_log_control' not found (Errcode: 13 "Permission denied")
+2023-08-07 16:35:05 0 [ERROR] mysqld: Got error 'Can't open file' when trying to use aria control file '/var/lib/mysql/aria_log_control'
+2023-08-07 16:35:05 0 [ERROR] Plugin 'Aria' init function returned error.
+2023-08-07 16:35:05 0 [ERROR] Plugin 'Aria' registration as a STORAGE ENGINE failed.
+2023-08-07 16:35:05 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2023-08-07 16:35:05 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2023-08-07 16:35:05 0 [ERROR] Plugin 'InnoDB' init function returned error.
+2023-08-07 16:35:05 0 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+2023-08-07 16:35:05 0 [ERROR] Unknown/unsupported storage engine: InnoDB
+2023-08-07 16:35:05 0 [ERROR] Aborting
+
+Warning: Memory not freed: 520

@@ -1,0 +1,45 @@
+version: '3'
+services:
+
+  nginx:
+    build: images/nginx/
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "/home/agrinpc/Projects/website:/var/www/html"
+    networks:
+      - backend
+    restart: always
+
+  mariadb:
+    build: images/mariadb/
+    container_name: mariadb
+    ports:
+      - "3306:3306"
+    volumes:
+      - "/home/agrinpc/Projects/mariadb:/var/lib/mysql"
+    networks:
+      - backend
+    restart: always
+    env_file:
+      - .env
+  
+  wordpress:
+    container_name: wordpress
+    depends_on:
+      - mariadb
+    build:
+      context: images/wordpress
+      dockerfile: Dockerfile
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - /home/agrinpc/Projects/website:/var/www/html
+    networks:
+      - backend
+
+networks:
+  backend:
