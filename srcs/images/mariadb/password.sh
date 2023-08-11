@@ -12,7 +12,6 @@ chown -R mysql:mysql /var/lib/mysql
 
 if [ -d "/var/lib/mysql/$MYSQL_DATABASE" ]
 then 
-
 	echo "Database already exists"
 else
 
@@ -20,8 +19,8 @@ else
 
 mysql_secure_installation << _EOF_
 Y
-root4life
-root4life
+$MYSQL_ROOT_PASSWORD
+$MYSQL_ROOT_PASSWORD
 Y
 n
 Y

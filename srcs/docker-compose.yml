@@ -9,8 +9,10 @@ services:
       - "443:443"
     volumes:
       - "/home/agrinpc/Projects/website:/var/www/html"
+    depends_on:
+      - wordpress
     networks:
-      - backend
+      - mynetwork
     restart: always
 
   mariadb:
@@ -21,7 +23,7 @@ services:
     volumes:
       - "/home/agrinpc/Projects/mariadb:/var/lib/mysql"
     networks:
-      - backend
+      - mynetwork
     restart: always
     env_file:
       - .env
@@ -39,7 +41,8 @@ services:
     volumes:
       - /home/agrinpc/Projects/website:/var/www/html
     networks:
-      - backend
+      - mynetwork
 
 networks:
-  backend:
+  mynetwork:
+    driver: bridge
