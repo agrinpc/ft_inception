@@ -8,7 +8,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - "/home/agrinpc/Projects/website:/var/www/html"
+      - "/home/miahmadi/data/website:/var/www/html"
     depends_on:
       - wordpress
     networks:
@@ -21,7 +21,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - "/home/agrinpc/Projects/mariadb:/var/lib/mysql"
+      - "/home/miahmadi/data/mariadb:/var/lib/mysql"
     networks:
       - mynetwork
     restart: always
@@ -39,7 +39,7 @@ services:
     env_file:
       - .env
     volumes:
-      - /home/agrinpc/Projects/website:/var/www/html
+      - /home/miahmadi/data/website:/var/www/html
     networks:
       - mynetwork
 

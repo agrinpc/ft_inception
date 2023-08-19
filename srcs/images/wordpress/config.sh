@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sleep 45
+sleep 35
 
 if [ -f ./wp-config.php ]
 then
@@ -21,8 +21,8 @@ else
 	cp wp-config-sample.php wp-config.php
 	chown -R www-data:www-data /var/www
 	chmod -R 755 /var/www
-	ls -la ../
 
 fi
+echo "Wordpress is up and running. Access the website via https://miahmadi.42.fr/"
 # echo "<?php phpinfo(); ?>" > test.php
 exec "$@"

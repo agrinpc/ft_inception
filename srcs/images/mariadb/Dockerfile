@@ -1,15 +1,13 @@
 FROM debian:bookworm
 
-# Install MariaDB
 RUN apt-get update && apt-get install -y mariadb-server mariadb-client
 
-# Copy the script to set up MariaDB on entrypoint
 COPY password.sh /tmp/password.sh
 COPY db.sql /tmp/db.sql
 RUN chmod +x /tmp/password.sh
 RUN chmod +x /tmp/db.sql
 
-# RUN useradd -m -s /bin/bash mariadb_user
+RUN mkdir /run/mysqld
 
 EXPOSE 3306
 
